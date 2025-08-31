@@ -3,7 +3,7 @@ package com.dockeep.config;
 import com.authmat.tool.exception.BaseGlobalExceptionHandler;
 import com.authmat.tool.exception.ErrorResponse;
 import com.dockeep.document.exception.DocumentNotFoundException;
-import com.dockeep.user.UserNotFoundException;
+import com.authmat.tool.exception.UserNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

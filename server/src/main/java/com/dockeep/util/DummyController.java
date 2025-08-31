@@ -9,4 +9,9 @@ public class DummyController {
     public String ping(){
         return "pong";
     }
+
+    @GetMapping("/secured")
+    public String secured(){
+        return "secured";
+    }
 }

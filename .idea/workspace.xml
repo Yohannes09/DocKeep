@@ -5,12 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5dea37a9-1b40-4bb7-92f9-83baab83d7ba" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/PublicKeyManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/util/DummyController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/config/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dockeep/PublicKeyManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dockeep/config/GlobalExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/config/GlobalExceptionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dockeep/config/JwtFilterConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/config/JwtFilterConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dockeep/config/KafkaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/config/KafkaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dockeep/user/UserNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dockeep/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/user/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dockeep/user/repository/CachedUserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/user/repository/CachedUserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/com/dockeep/util/DummyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/com/dockeep/util/DummyController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,8 +53,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/server/src/main/java/com/dockeep/document/service/DocumentService.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/server/src/main/java/com/dockeep/user/UserPrincipal.java" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/server/src/main/resources/graphql/constant/Common.graphqls" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/server/src/main/java/com/dockeep/user/UserService.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/server/src/main/resources/graphql/queries/documentQueries.graphqls" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/server/src/main/resources/graphql/types/Document.graphqls" root0="SKIP_INSPECTION" />
   </component>
@@ -68,32 +72,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.DocKeepApplication.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ChatTagsLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ClientConfigCleanupMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAccountHistoryMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAccountsIdsRefresh&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyConvertUrlToCodebaseName&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyHistoryLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyMigrateChatHistory-v2&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.CodyProjectSettingsMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.DeprecatedChatLlmMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ToggleCodyToolWindowAfterMigration&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/yohannesmata/DEVELOPMENT/Dockeep&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.other&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DocKeepApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ChatTagsLlmMigration": "true",
+    "RunOnceActivity.ClientConfigCleanupMigration": "true",
+    "RunOnceActivity.CodyAccountHistoryMigration": "true",
+    "RunOnceActivity.CodyAccountsIdsRefresh": "true",
+    "RunOnceActivity.CodyAssignOrphanedChatsToActiveAccount": "true",
+    "RunOnceActivity.CodyConvertUrlToCodebaseName": "true",
+    "RunOnceActivity.CodyHistoryLlmMigration": "true",
+    "RunOnceActivity.CodyMigrateChatHistory-v2": "true",
+    "RunOnceActivity.CodyProjectSettingsMigration": "true",
+    "RunOnceActivity.DeprecatedChatLlmMigration": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.ToggleCodyToolWindowAfterMigration": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/yohannesmata/DEVELOPMENT/DocKeep",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "configurable.group.other"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.dockeep.document" />

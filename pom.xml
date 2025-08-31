@@ -102,7 +102,7 @@
         </dependency>
         <dependency>
             <groupId>com.authmat</groupId>
-            <artifactId>Token-Validation</artifactId>
+            <artifactId>authmat-lib</artifactId>
             <version>1.0.1</version>
         </dependency>
 

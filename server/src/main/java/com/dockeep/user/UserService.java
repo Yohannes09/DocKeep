@@ -1,6 +1,6 @@
 package com.dockeep.user;
 
-import com.authmat.tool.events.NewUserEvent;
+import com.authmat.events.NewUserEvent;
 import com.dockeep.user.model.User;
 import com.dockeep.user.repository.CachedUserRepository;
 import com.dockeep.user.util.UserMapper;

@@ -1,6 +1,6 @@
 package com.dockeep.user.repository;
 
-import com.dockeep.user.UserNotFoundException;
+import com.authmat.tool.exception.UserNotFoundException;
 import com.dockeep.user.model.User;
 import com.dockeep.user.model.UserDto;
 import com.dockeep.user.util.UserMapper;
@@ -45,12 +45,12 @@ public class CachedUserRepository {
         );
     }
 
-    public User findUserEntityByUsernameOrEmail(Long id){
+    public User findUserEntityByUsernameOrEmail(String usernameOrEmail){
         return findUser(
                 identifier -> userRepository
-                        .findById(identifier)
+                        .findByUsernameOrEmail(identifier)
                         .orElseThrow(() -> new UserNotFoundException("")),
-                id,
+                usernameOrEmail,
                 Objects::nonNull,
                 userMapper::dtoToEntity
         );
