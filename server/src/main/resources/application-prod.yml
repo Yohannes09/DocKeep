@@ -1,9 +1,0 @@
-db:
-  jdbc-url: ${DB_URL}
-  username: ${DB_USERNAME}
-  password: ${DB_PASSWORD}
-  driver: ${DB_DRIVER}
-  max-pool-size: ${DB_MAX_POOL_SIZE}
-  min-idle-connections: ${DB_MIN_IDLE_CONNECTIONS}
-  idle-timeout-ms: ${DB_IDLE_TIMEOUT_MS}
-  max-lifetime-ms: ${DB_MAX_LIFETIME_MS}

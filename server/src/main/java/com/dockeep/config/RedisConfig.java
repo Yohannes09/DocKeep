@@ -23,24 +23,13 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 public class RedisConfig {
 
     @Bean("prodRedisConnectionFactory")
-    @Profile("prod")
     public RedisConnectionFactory externallyConfiguredRedisConnectionFactory(
-            @Value("${cache.host}") String hostName,
-            @Value("${cache.port:6379}") int port
-    ) {
+            @Value("${cache.redis.host}") String hostName,
+            @Value("${cache.redis.port:6379}") int port) {
+
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration(hostName, port);
         return new LettuceConnectionFactory(config);
     }
-
-    @Bean("devRedisConnectionFactory")
-    @Profile("dev")
-    public RedisConnectionFactory redisConnectionFactory() {
-        RedisStandaloneConfiguration config = new RedisStandaloneConfiguration(
-                "10.0.0.222", 6379
-        );
-        return new LettuceConnectionFactory(config);
-    }
-
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
@@ -57,7 +46,6 @@ public class RedisConfig {
     public RedisSerializer<Object> redisSerializer(ObjectMapper objectMapper){
         return new GenericJackson2JsonRedisSerializer(objectMapper);
     }
-
 
     @Bean
     public ObjectMapper objectMapper(){

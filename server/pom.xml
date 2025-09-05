@@ -8,10 +8,10 @@
 		<version>3.4.8</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
+
 	<groupId>com.dockeep</groupId>
 	<artifactId>dockeep</artifactId>
 	<version>1.0.0</version>
-	<name>demo</name>
 	<description>dockeep</description>
 	<url/>
 	<licenses>
