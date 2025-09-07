@@ -1,0 +1,20 @@
+scalar Long
+#scalar Upload
+scalar DateTime
+
+enum Permission{
+    READ
+    WRITE
+    EDIT
+    DELETE
+}
+
+type Query{
+    _dummy: String
+}
+
+type Error {
+    code: String!
+    message: String!
+}
+

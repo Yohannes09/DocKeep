@@ -1,0 +1,9 @@
+type User {
+    id: ID!
+    email: String!
+    username: String!
+    firstName: String!
+    lastName: String!
+    documents: [Document!]
+    sharedDocuments: [Document!]
+}

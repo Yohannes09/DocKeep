@@ -1,0 +1,17 @@
+type Document {
+    id: ID!
+    title: String!
+    owner: User!
+    tags: [String!]
+    createdAt: String!
+#    shares: [Share!]
+}
+
+# Gragphql equivalent of Page<DocumentDto>
+type DocumentPage{
+    documents: [Document]
+    pageNumber: Int
+    pageSize: Int
+    totalElements: Int
+    totalPages: Int
+}

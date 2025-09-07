@@ -1,0 +1,3 @@
+type DocumentQueries {
+    getDocumentsByUserId(pageNumber: Int!, pageSize: Int!): [DocumentPage]
+}
