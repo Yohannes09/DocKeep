@@ -1,8 +1,7 @@
 spring:
   jpa:
+    show-sql: true
+    properties:
+      format_sql: true
     hibernate:
-      ddl-auto: create-drop
-
-server:
-  port: 8081
-
+      ddl-auto: create

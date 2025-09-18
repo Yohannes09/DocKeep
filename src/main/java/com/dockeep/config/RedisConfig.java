@@ -22,11 +22,10 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @EnableCaching
 public class RedisConfig {
 
-    @Bean("prodRedisConnectionFactory")
-    public RedisConnectionFactory externallyConfiguredRedisConnectionFactory(
-            @Value("${cache.redis.host}") String hostName,
-            @Value("${cache.redis.port:6379}") int port) {
-
+    @Bean
+    public RedisConnectionFactory redisConnectionFactory(
+            @Value("${REDIS_HOST}") String hostName,
+            @Value("#{environment['REDIS_PORT'] ?: 6379}") int port) {
         RedisStandaloneConfiguration config = new RedisStandaloneConfiguration(hostName, port);
         return new LettuceConnectionFactory(config);
     }
