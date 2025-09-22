@@ -1,4 +1,13 @@
 spring:
+  kafka:
+    bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+  redis:
+    host: ${REDIS_HOST}
+    port: ${REDIS_PORT}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
   output:
     ansi:
       enabled: ALWAYS
@@ -28,9 +37,14 @@ aws:
   region: ${AWS_REGION}
   bucket:
     name: ${AWS_BUCKET_NAME}
+  credentials:
+    access-key: ${AWS_ACCESS_KEY}
+    secret-key: ${AWS_SECRET_KEY}
 
-kafka:
-  bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}
+#KAFKA_BOOTSTRAP_SERVERS:
 
-REDIS_HOST:
-REDIS_PORT:
+#REDIS_HOST:
+#REDIS_PORT:
+
+#kafka:
+#  bootstrap-servers: ${KAFKA_BOOTSTRAP_SERVERS}

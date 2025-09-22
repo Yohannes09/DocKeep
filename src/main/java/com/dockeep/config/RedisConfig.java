@@ -22,13 +22,13 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @EnableCaching
 public class RedisConfig {
 
-    @Bean
-    public RedisConnectionFactory redisConnectionFactory(
-            @Value("${REDIS_HOST}") String hostName,
-            @Value("#{environment['REDIS_PORT'] ?: 6379}") int port) {
-        RedisStandaloneConfiguration config = new RedisStandaloneConfiguration(hostName, port);
-        return new LettuceConnectionFactory(config);
-    }
+//    @Bean
+//    public RedisConnectionFactory redisConnectionFactory(
+//            @Value("${REDIS_HOST}") String hostName,
+//            @Value("#{environment['REDIS_PORT'] ?: 6379}") int port) {
+//        RedisStandaloneConfiguration config = new RedisStandaloneConfiguration(hostName, port);
+//        return new LettuceConnectionFactory(config);
+//    }
 
     @Bean
     public RedisTemplate<String, Object> redisTemplate(RedisConnectionFactory connectionFactory) {
@@ -55,8 +55,7 @@ public class RedisConfig {
         objectMapper.activateDefaultTyping(
                 LaissezFaireSubTypeValidator.instance,
                 ObjectMapper.DefaultTyping.NON_FINAL,
-                JsonTypeInfo.As.PROPERTY
-        );
+                JsonTypeInfo.As.PROPERTY);
 
         return objectMapper;
     }

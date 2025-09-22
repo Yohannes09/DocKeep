@@ -30,7 +30,7 @@ public class S3Service {
     private final S3Client s3Client;
     private final S3Presigner s3Presigner;
 
-    @Value("${cloud.aws.bucket.name}")
+    @Value("${aws.bucket.name}")
     private String bucketName;
 
     public String uploadFile(MultipartFile file, String fileName) throws IOException {

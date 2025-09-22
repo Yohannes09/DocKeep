@@ -13,26 +13,26 @@ import software.amazon.awssdk.services.s3.presigner.S3Presigner;
 
 @Configuration
 public class S3Config {
-    @Value("${cloud.aws.region.static}")
+    @Value("${aws.region}")
     private String awsRegion;
 
-    @Value("${cloud.aws.credentials.access-key}")
-    private String awsAccessKey;
+//    @Value("${aws.credentials.access-key}")
+//    private String awsAccessKey;
+//
+//    @Value("${aws.credentials.secret-key}")
+//    private String awsSecretKey;
 
-    @Value("${cloud.aws.credentials.secret-key}")
-    private String awsSecretKey;
 
-
-    @Bean
-    @Profile("dev")
-    public S3Client explicitCredentialS3Client(){
-        AwsBasicCredentials awsBasicCredentials = AwsBasicCredentials.create(awsAccessKey, awsSecretKey);
-
-        return S3Client.builder()
-                .region(Region.of(awsRegion))
-                .credentialsProvider(StaticCredentialsProvider.create(awsBasicCredentials))
-                .build();
-    }
+//    @Bean
+//    @Profile("dev")
+//    public S3Client explicitCredentialS3Client(){
+//        AwsBasicCredentials awsBasicCredentials = AwsBasicCredentials.create(awsAccessKey, awsSecretKey);
+//
+//        return S3Client.builder()
+//                .region(Region.of(awsRegion))
+//                .credentialsProvider(StaticCredentialsProvider.create(awsBasicCredentials))
+//                .build();
+//    }
 
     @Bean
     @Profile("prod")
@@ -43,16 +43,16 @@ public class S3Config {
                 .build();
     }
 
-    @Bean
-    @Profile("dev")
-    public S3Presigner explicitCredentialsS3Presigner(){
-        return S3Presigner.builder()
-                .region(Region.of(awsRegion))
-                .credentialsProvider(StaticCredentialsProvider.create(
-                        AwsBasicCredentials.create(awsAccessKey, awsSecretKey)
-                ))
-                .build();
-    }
+//    @Bean
+//    @Profile("dev")
+//    public S3Presigner explicitCredentialsS3Presigner(){
+//        return S3Presigner.builder()
+//                .region(Region.of(awsRegion))
+//                .credentialsProvider(StaticCredentialsProvider.create(
+//                        AwsBasicCredentials.create(awsAccessKey, awsSecretKey)
+//                ))
+//                .build();
+//    }
 
     @Bean
     @Profile("prod")
